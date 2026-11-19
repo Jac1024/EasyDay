@@ -1,0 +1,41 @@
+<Window x:Class="EasyDay.App.Views.CaptureOverlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="截图识别"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        WindowStartupLocation="Manual"
+        Topmost="True"
+        Cursor="Cross"
+        PreviewKeyDown="Window_PreviewKeyDown">
+
+    <Grid x:Name="Root"
+          Background="#66000000"
+          MouseLeftButtonDown="Root_MouseLeftButtonDown"
+          MouseMove="Root_MouseMove"
+          MouseLeftButtonUp="Root_MouseLeftButtonUp">
+
+        <Canvas x:Name="Layer">
+            <Rectangle x:Name="SelRect"
+                       Visibility="Collapsed"
+                       Stroke="#2563EB"
+                       StrokeThickness="1.5"
+                       StrokeDashArray="4 3"
+                       Fill="#22FFFFFF" />
+        </Canvas>
+
+        <Border Background="#CC0F172A"
+                CornerRadius="20"
+                Padding="18,9"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="0,60,0,0">
+            <TextBlock Text="拖动框选通知区域 · Esc 取消"
+                       Foreground="White"
+                       FontSize="13" />
+        </Border>
+    </Grid>
+</Window>

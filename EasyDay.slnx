@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/EasyDay.App/EasyDay.App.csproj" />
+    <Project Path="src/EasyDay.Core/EasyDay.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EasyDay.Core.Tests/EasyDay.Core.Tests.csproj" />
+  </Folder>
+</Solution>

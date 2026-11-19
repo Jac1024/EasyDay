@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>EasyDay</AssemblyName>
+    <RootNamespace>EasyDay.App</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <InformationalVersion>1.0.0</InformationalVersion>
+    <ApplicationTitle>EasyDay</ApplicationTitle>
+    <Product>EasyDay</Product>
+    <Company>Jac1024</Company>
+    <Authors>Jac1024</Authors>
+    <Copyright>© 2026 Jac1024</Copyright>
+    <Description>微信群里的一条通知，几秒变成桌面日程。本地优先的 Windows 桌面日历助手。</Description>
+    <RepositoryUrl>https://github.com/Jac1024/EasyDay</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <NoWarn>$(NoWarn);WFO0003</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EasyDay.Core\EasyDay.Core.csproj" />
+  </ItemGroup>
+
+  <!-- WinForms 只为托盘图标而引入，去掉它带来的全局 using，避免与 WPF 类型冲突 -->
+  <ItemGroup>
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+</Project>
